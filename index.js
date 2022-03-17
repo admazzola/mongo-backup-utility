@@ -5,6 +5,12 @@ const shell = require('shelljs');
 dotenv.config()
 
 
+const fs = require('fs');
+const path = require('path');
+   
+
+
+
 function init(){
 
     let options = {
@@ -14,6 +20,18 @@ function init(){
 
 
     console.log('starting backup utility ', options)
+
+    try{
+        if (!fs.existsSync(path.join(__dirname, 'backups'))) {
+
+            fs.mkdirSync(path.join(__dirname, 'backups'), (err) => { 
+                console.log('Directory created successfully!');
+            });
+
+        }
+    }catch(err){
+        return console.error(err);
+    }
 
 
 
