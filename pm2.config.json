@@ -1,0 +1,14 @@
+{
+    "apps" : [
+        {
+          "name": "MongoBackupService",
+          "script": "node index.js",
+          "watch": false,
+          "env": { 
+            "cronTime":"00 11 * * *"
+         }
+     }  
+    ]
+  }
+
+ 
